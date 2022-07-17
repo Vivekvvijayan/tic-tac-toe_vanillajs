@@ -52,7 +52,7 @@ section.gameContainer{
 
 
 }
-/* 
+
 .board .cell:hover{
     background: rgba(23, 23, 75, 0.9);
     
@@ -60,7 +60,7 @@ section.gameContainer{
     backdrop-filter: blur(2.6px);
     -webkit-backdrop-filter: blur(2.6px);
     
-} */
+}
 
 .board .cell.strike-row::before{
 
