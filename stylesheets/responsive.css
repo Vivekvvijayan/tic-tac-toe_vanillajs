@@ -34,6 +34,7 @@
     .board .cell:hover{
         box-shadow: 0;
         background-color: #171749;
+        border-radius:30px;
 
     }
 
