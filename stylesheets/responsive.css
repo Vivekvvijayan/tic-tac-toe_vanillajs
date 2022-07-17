@@ -2,6 +2,9 @@
     .header{
         height:150px;
     }
+    .board{
+        width:350px;
+    }
     
     .popup-box{
         width: 90vw;
