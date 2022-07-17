@@ -1,0 +1,37 @@
+@media only screen and (max-width:449px){
+    .popup-box{
+        width: 90vw;
+        height:50vh;
+        margin-top: 30px;
+    
+    }
+    .popup-box button{
+        width: 200px;
+        height: 60px;
+    }
+    .pop-up-box-head,
+    .winner-name
+    {
+        font-size: 4rem;
+    }
+
+    header .player{
+        width: 250px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+    header .player .player-1{
+        border-radius: 10px;
+    }
+    .heading{
+        font-size: 2.5rem;
+    }
+
+
+
+
+
+    
+
+}

@@ -1,0 +1,115 @@
+
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+
+section.gameContainer{
+    background-color: #17174b;
+    min-height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+   
+}
+
+.board{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-self: center;
+    
+    gap:2px;
+    border: 1px solid #fff;
+
+    
+}
+.board .cell{
+    width: 130px;
+    height: 130px;
+    background-color: #17174b;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    color: #fff;
+    border-radius: 30px;
+    position: relative;
+   
+
+
+}
+
+.board .cell:hover{
+    background: rgba(23, 23, 75, 0.9);
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.6px);
+    -webkit-backdrop-filter: blur(2.6px);
+}
+
+.board .cell.strike-row::before{
+
+    content: '';
+    position: absolute;
+  
+    width: 110%;
+    height: 10px;
+    background-color: #cdb599;
+   border-radius: 14px;
+    
+}
+.board .cell.strike-col::before{
+
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 110%;
+    background-color: #cdb599;
+   border-radius: 14px;
+    
+}
+.board .cell.strike-diag-1::before{
+
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 160%;
+    background-color: #cdb599;
+   border-radius: 14px;
+   transform: rotate(-45deg);
+    
+}
+.board .cell.strike-diag-2::before{
+
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 160%;
+    background-color: #cdb599;
+   border-radius: 14px;
+   transform: rotate(45deg);
+    
+}
+.board .cell.col::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 110%;
+    background-color: red;
+}
+
+
+
