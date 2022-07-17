@@ -1,6 +1,6 @@
 const Tones = {
-    WIN:'https://vivekvvijayan.github.io/tones/WIN.wav',
-    DRAW:'https://vivekvvijayan.github.io/tones/DRAW.mp3',
-    X_MOVE:'https://vivekvvijayan.github.io/tones/X.mp3',
-    O_MOVE:'https://vivekvvijayan.github.io/tones/O.mp3'
+    WIN:'../tones/WIN.wav',
+    DRAW:'../tones/DRAW.mp3',
+    X_MOVE:'../tones/X.mp3',
+    O_MOVE:'../tones/O.mp3'
 }
