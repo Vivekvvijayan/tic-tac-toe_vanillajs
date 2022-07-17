@@ -59,6 +59,7 @@ section.gameContainer{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.6px);
     -webkit-backdrop-filter: blur(2.6px);
+    /* border-radius: 30px; */
     
 }
 
