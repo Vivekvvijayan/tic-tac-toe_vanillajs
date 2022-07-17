@@ -17,6 +17,7 @@ cell.forEach((cell) => {
     cell.addEventListener('mouseover', (e) => {
         if (e.target.innerText === '') {
             e.target.style.color = 'gray';
+            cell.style.zIndex = '1';
             e.target.innerText = CURRENT_PLAYER;
             
         }
@@ -44,12 +45,13 @@ function drawTic(e) {
         e.target.innerText = CURRENT_PLAYER;
         
        CURRENT_PLAYER === tik_x ? playAudio(Tones.X_MOVE) :playAudio(Tones.O_MOVE);
-        audio.play();
+        // audio.play();
 
         if (checkWin()) {
 
             isWinned = true;
             playAudio(Tones.WIN)
+          
             showPopup(CURRENT_PLAYER)
 
         }
@@ -191,8 +193,8 @@ function showPopup(CURRENT_PLAYER) {
     popup.style.display = 'block'
     
 
-
-    isWinned ? (winner_header = CURRENT_PLAYER, pop_up_box_head = 'WINNER') : (winner_header.innerText = 'Draw', pop_up_box_head.innerText = '');
+    console.log(CURRENT_PLAYER)
+    isWinned ? (winner_header.innerText = CURRENT_PLAYER, pop_up_box_head = 'WINNER') : (winner_header.style.display = 'none', pop_up_box_head.innerText = 'DRAW');
 
     return;
 
