@@ -17,6 +17,7 @@
 
     header .player{
         width: 250px;
+        height:60px;
         border-radius: 10px;
         padding: 5px;
         margin-top: 10px;
