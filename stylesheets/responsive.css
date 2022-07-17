@@ -1,4 +1,8 @@
 @media only screen and (max-width:449px){
+    .header{
+        height:150px;
+    }
+    
     .popup-box{
         width: 90vw;
         height:50vh;
