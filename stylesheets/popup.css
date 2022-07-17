@@ -13,7 +13,7 @@
     align-items: center;
     border-radius: 20px;
     
-    backdrop-filter: blur(16px) saturate(158%);
+    backdrop-filter: blur(3px) saturate(158%);
     -webkit-backdrop-filter: blur(16px) saturate(158%);
     background-color: rgba(17, 25, 40, 0.8);
     border-radius: 12px;
