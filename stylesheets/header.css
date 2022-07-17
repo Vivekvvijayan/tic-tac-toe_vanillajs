@@ -4,6 +4,9 @@
     box-sizing:border-box;
     font-family: 'Edu TAS Beginner', cursive;
 }
+body{
+    width: 100%;
+}
 
 header{
     width: 100%;

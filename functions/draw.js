@@ -9,7 +9,7 @@ let i;
 let strikeClass = ''
 
 let isWinned = false;
-const audio = new Audio();
+// const audio = new Audio();
 
 
 
@@ -44,27 +44,33 @@ function drawTic(e) {
         e.target.style.color = '#fff';
         e.target.innerText = CURRENT_PLAYER;
         
-       CURRENT_PLAYER === tik_x ? playAudio(Tones.X_MOVE) :playAudio(Tones.O_MOVE);
+    //    CURRENT_PLAYER === tik_x ? playAudio(Tones.X_MOVE) :playAudio(Tones.O_MOVE);
         // audio.play();
 
         if (checkWin()) {
 
-            isWinned = true;
-            playAudio(Tones.WIN)
-          
-            showPopup(CURRENT_PLAYER)
+            
+            if(checkDraw()){
+                
+                showPopup()
+                
+            }else{
+                isWinned = true;
+                showPopup(CURRENT_PLAYER)
+            }
+            return
 
         }
 
         if (checkDraw()) {
-            playAudio(Tones.DRAW)
+            
             showPopup()
 
         }
 
+        toggleHeaderPlayer()
+        togglePlayer()
     }
-    toggleHeaderPlayer()
-    togglePlayer()
 
 }
 
@@ -95,9 +101,10 @@ function checkCol() {
     for (i = 0; i < 3; i++) {
         if (space[i] === space[i + 3] && space[i] === space[i + 6] && space[i] !== '') {
             strikeClass = 'strike-col'
-            console.log(i, i + 6)
+            
             addStrike(i, i + 3, i + 6, strikeClass)
             return true
+           
         }
     }
     return false
@@ -105,16 +112,20 @@ function checkCol() {
 
 function checkDiag() {
 
-    if (space[0] === space[4] && space[0] === space[8] && space[4] != '') {
+    if (space[0] === space[4] && space[0] === space[8] && space[4] !== '') {
+       if(!checkDraw()) {
         strikeClass = 'strike-diag-1'
         addStrike(0, 4, 8, strikeClass)
-
+       }
         return true;
+
     }
 
     if (space[2] === space[4] && space[2] === space[6] && space[4] !== '') {
-        strikeClass = 'strike-diag-2'
+        if(!checkDraw()) {
+            strikeClass = 'strike-diag-2'
         addStrike(2, 4, 6, strikeClass)
+        }
         return true
     }
     return false;
@@ -122,7 +133,7 @@ function checkDiag() {
 }
 function checkWin() {
 
-    return checkRow() || checkCol() || checkDiag();
+    return checkRow() || checkCol() || checkDiag()
 
 
 }
@@ -171,7 +182,7 @@ function addStrike(i, j, k, addClass) {
 
 
     })
-
+    // return;
 }
 
 
@@ -184,7 +195,7 @@ function removeStrike(addClass) {
 }
 
 
-function showPopup(CURRENT_PLAYER) {
+function showPopup( CP = '' ) {
 
     const popup = document.querySelector('.popup-box')
     let winner_header = document.querySelector('.winner-name')
@@ -192,12 +203,8 @@ function showPopup(CURRENT_PLAYER) {
     const btnPlayAgain = document.querySelector('.btn-play-again')
     popup.style.display = 'block'
     
-
-    console.log(CURRENT_PLAYER)
-    isWinned ? (winner_header.innerText = CURRENT_PLAYER, pop_up_box_head = 'WINNER') : (winner_header.style.display = 'none', pop_up_box_head.innerText = 'DRAW');
-
-    return;
-
+    isWinned ? (winner_header.innerText = CP, pop_up_box_head.innerText = 'WINNER') : (winner_header.style.display = 'none', pop_up_box_head.innerText = 'DRAW');
+   
 
 
 }
