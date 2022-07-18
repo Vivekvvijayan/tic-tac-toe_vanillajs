@@ -87,8 +87,10 @@ function checkRow() {
 
     for (i = 0; i <= 6; i += 3) {
         if (space[i] === space[i + 1] && space[i] === space[i + 2] && space[i] !== '') {
+            if(!checkDraw()) {
             strikeClass = 'strike-row'
             addStrike(i, i + 1, i + 2, strikeClass)
+            }
             return true;
         }
     }
@@ -100,9 +102,11 @@ function checkCol() {
 
     for (i = 0; i < 3; i++) {
         if (space[i] === space[i + 3] && space[i] === space[i + 6] && space[i] !== '') {
+            if(!checkDraw()) {
             strikeClass = 'strike-col'
             
             addStrike(i, i + 3, i + 6, strikeClass)
+            }
             return true
            
         }
