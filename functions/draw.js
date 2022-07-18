@@ -58,12 +58,12 @@ function drawTic(e) {
                 isWinned = true;
                 showPopup(CURRENT_PLAYER)
             }
-            return
+            
 
         }
 
         if (checkDraw()) {
-            
+        
             showPopup()
 
         }
@@ -153,7 +153,10 @@ function checkDraw() {
         }
     })
 
-    return count === 9;
+     if(count === 9){
+        isWinned = false;
+        return true;
+     };
 }
 
 function restart() {
@@ -166,8 +169,8 @@ function restart() {
 
     })
     removeStrike(strikeClass)
-    togglePlayer()
     isWinned = false
+    togglePlayer()
 }
 
 
@@ -199,13 +202,14 @@ function removeStrike(addClass) {
 }
 
 
-function showPopup( CP = '' ) {
+function showPopup( CP ) {
 
     const popup = document.querySelector('.popup-box')
     let winner_header = document.querySelector('.winner-name')
     let pop_up_box_head = document.querySelector('.pop-up-box-head')
     const btnPlayAgain = document.querySelector('.btn-play-again')
     popup.style.display = 'block'
+    winner_header.style.display = 'flex'
     
     isWinned ? (winner_header.innerText = CP, pop_up_box_head.innerText = 'WINNER') : (winner_header.style.display = 'none', pop_up_box_head.innerText = 'DRAW');
    
